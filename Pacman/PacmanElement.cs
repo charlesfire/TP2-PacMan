@@ -9,7 +9,8 @@ namespace PathFinder
     Pacman = 3,
     Pill = 4,
     GhostCage = 5,
-    SuperPill = 6
+    SuperPill = 6,
+    Undefined = 7
   }
 }
 //</Charles Lachance>
