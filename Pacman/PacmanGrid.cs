@@ -10,20 +10,20 @@ namespace PathFinder
   class PacmanGrid
   {
     private PacmanElement[,] mazeElements = null;
-    private uint mazeWidth = 0;
-    private uint mazeHeight = 0;
+    private int mazeWidth = 0;
+    private int mazeHeight = 0;
 
-    public uint GetHeight()
+    public int GetHeight()
     {
       return mazeHeight;
     }
 
-    public uint GetWidth()
+    public int GetWidth()
     {
       return mazeWidth;
     }
 
-    public PacmanElement GetMazeElementAt(uint row, uint col)
+    public PacmanElement GetMazeElementAt(int row, int col)
     {
       if (row < mazeHeight && col < mazeWidth)
       {
@@ -33,7 +33,7 @@ namespace PathFinder
       return PacmanElement.Undefined;
     }
 
-    public void SetMazeElementAt(uint row, uint col, PacmanElement element)
+    public void SetMazeElementAt(int row, int col, PacmanElement element)
     {
       if (row < mazeHeight && col < mazeWidth)
       {
@@ -46,11 +46,13 @@ namespace PathFinder
       string[] mazeRow = mazeDescription.Split(';');
       if (mazeRow.Count() > 0)
       {
-        mazeElements = new PacmanElement[mazeRow.Count(), (mazeRow[0].Length/2 + 1)];
-        for (int i = 0; i < mazeRow.Count(); i++)
+        mazeHeight = mazeRow.Count() - 1;
+        mazeWidth = mazeRow[0].Length/2 + 1;
+        mazeElements = new PacmanElement[mazeHeight, mazeWidth];
+        for (int i = 0; i < mazeHeight; i++)
         {
           string[] elements = mazeRow[i].Split(',');
-          for (int j = 0; j < elements.Count(); j++)
+          for (int j = 0; j < mazeWidth; j++)
           {
             int element = 7;
             int.TryParse(elements[j], out element);
