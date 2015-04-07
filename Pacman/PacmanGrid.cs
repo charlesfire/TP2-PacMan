@@ -1,13 +1,9 @@
 ﻿//<Charles Lachance>
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PathFinder
 {
-  class PacmanGrid
+  public class PacmanGrid
   {
     private PacmanElement[,] mazeElements = null;
     private int mazeWidth = 0;

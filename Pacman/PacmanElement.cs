@@ -1,7 +1,7 @@
 ﻿//<Charles Lachance>
 namespace PathFinder
 {
-  enum PacmanElement
+  public enum PacmanElement
   {
     None = 0,
     Wall = 1,

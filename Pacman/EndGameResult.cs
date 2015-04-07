@@ -1,7 +1,7 @@
 ﻿//<Charles Lachance>
 namespace Pacman
 {
-  enum EndGameResult
+  public enum EndGameResult
   {
     Loose,
     NotFinished,

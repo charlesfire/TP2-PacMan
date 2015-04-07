@@ -1,7 +1,7 @@
 ﻿//<Charles Lachance>
 namespace PathFinder
 {
-  enum Direction
+  public enum Direction
   {
     East,
     North,
