@@ -1,4 +1,5 @@
-﻿using PathFinder;
+﻿using System.Drawing;
+using PathFinder;
 
 namespace Pacman
 {
@@ -102,11 +103,13 @@ namespace Pacman
     /// </summary>
     /// <param name="aMaze">Grille du jeu</param>
     /// <param name="pacman">Instance du pacman</param>
-    public void Update(PacmanGrid aMaze/*, Pacman pacman*/)
+    public void Update(PacmanGrid aMaze, Pacman pacman)
     {
       if (nbUpdates % nbUpdatesBeforeMove == 0)
       {
-
+        Point ghostPoint = new Point(xPosition, yPosition);
+        Point pacPoint = new Point((int)pacman.GetX(), (int)pacman.GetY());
+        Move(PathFinder.PathFinder.FindShortestPath(aMaze,ghostPoint,pacPoint),aMaze);
       }
     }
   }
