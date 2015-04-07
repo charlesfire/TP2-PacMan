@@ -7,9 +7,9 @@ namespace Pacman
   {
     //<Tommy Bouffard>
     //Hauteur du formulaire du jeu
-    public const int DEFAULT_GAME_HEIGHT = 0;
+    public const int GAME_HEIGHT = 1;
     //Largeur du formulaire du jeu
-    public const int DEFAULT_GAME_WIDTH = 0;
+    public const int GAME_WIDTH = 1;
     //Pacman du jeu
     ////////////////////////////////Pacman pacman = new Pacman();
     //Nombre de fantômes dans le jeu

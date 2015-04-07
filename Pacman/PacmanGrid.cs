@@ -19,7 +19,7 @@ namespace PathFinder
       return mazeWidth;
     }
 
-    public PacmanElement GetMazeElementAt(int row, int col)
+    public PacmanElement GetMazeElementAt(int col, int row)
     {
       if (row < mazeHeight && col < mazeWidth)
       {
@@ -29,7 +29,7 @@ namespace PathFinder
       return PacmanElement.Undefined;
     }
 
-    public void SetMazeElementAt(int row, int col, PacmanElement element)
+    public void SetMazeElementAt(int col, int row, PacmanElement element)
     {
       if (row < mazeHeight && col < mazeWidth)
       {
