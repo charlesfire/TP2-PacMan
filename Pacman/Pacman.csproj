@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="EndGameResult.cs" />
     <Compile Include="Direction.cs" />
+    <Compile Include="Ghost.cs" />
     <Compile Include="PacmanElement.cs" />
     <Compile Include="PacmanGame\UI\Form1.cs">
       <SubType>Form</SubType>

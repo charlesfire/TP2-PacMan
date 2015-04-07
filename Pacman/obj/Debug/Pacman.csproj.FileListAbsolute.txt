@@ -8,3 +8,6 @@ d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.Properties.Resourc
 d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.csproj.GenerateResource.Cache
 d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.exe
 d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.pdb
+d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\bin\Debug\Pacman.exe.config
+d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\obj\Debug\Pacman.exe
+d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\obj\Debug\Pacman.pdb
