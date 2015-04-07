@@ -24,25 +24,29 @@ namespace PathFinder
 
     private static void BuildPaths(PacmanGrid maze, Point from, int[,] costs)
     {
-      if (from.X + 1 < maze.GetWidth() && maze.GetMazeElementAt(from.X + 1, from.Y) != PacmanElement.Wall && costs[from.X, from.Y] + 1 < costs[from.X + 1, from.Y])
+      if (from.X + 1 < maze.GetWidth() && maze.GetMazeElementAt(from.X + 1, from.Y) != PacmanElement.Wall &&
+      maze.GetMazeElementAt(from.X + 1, from.Y) != PacmanElement.Ghost && costs[from.X, from.Y] + 1 < costs[from.X + 1, from.Y])
       {
         costs[from.X + 1, from.Y] = costs[from.X, from.Y] + 1;
         BuildPaths(maze, new Point(from.X + 1, from.Y), costs);
       }
 
-      if (from.X - 1 >= 0 && maze.GetMazeElementAt(from.X - 1, from.Y) != PacmanElement.Wall && costs[from.X, from.Y] + 1 < costs[from.X - 1, from.Y])
+      if (from.X - 1 >= 0 && maze.GetMazeElementAt(from.X - 1, from.Y) != PacmanElement.Wall &&
+      maze.GetMazeElementAt(from.X - 1, from.Y) != PacmanElement.Ghost && costs[from.X, from.Y] + 1 < costs[from.X - 1, from.Y])
       {
         costs[from.X - 1, from.Y] = costs[from.X, from.Y] + 1;
         BuildPaths(maze, new Point(from.X - 1, from.Y), costs);
       }
 
-      if (from.Y + 1 < maze.GetHeight() && maze.GetMazeElementAt(from.X, from.Y + 1) != PacmanElement.Wall && costs[from.X, from.Y] + 1 < costs[from.X, from.Y + 1])
+      if (from.Y + 1 < maze.GetHeight() && maze.GetMazeElementAt(from.X, from.Y + 1) != PacmanElement.Wall &&
+      maze.GetMazeElementAt(from.X, from.Y + 1) != PacmanElement.Ghost && costs[from.X, from.Y] + 1 < costs[from.X, from.Y + 1])
       {
         costs[from.X, from.Y + 1] = costs[from.X, from.Y] + 1;
         BuildPaths(maze, new Point(from.X, from.Y + 1), costs);
       }
 
-      if (from.Y - 1 >= 0 && maze.GetMazeElementAt(from.X, from.Y - 1) != PacmanElement.Wall && costs[from.X, from.Y] + 1 < costs[from.X, from.Y - 1])
+      if (from.Y - 1 >= 0 && maze.GetMazeElementAt(from.X, from.Y - 1) != PacmanElement.Wall &&
+      maze.GetMazeElementAt(from.X, from.Y - 1) != PacmanElement.Ghost && costs[from.X, from.Y] + 1 < costs[from.X, from.Y - 1])
       {
         costs[from.X, from.Y - 1] = costs[from.X, from.Y] + 1;
         BuildPaths(maze, new Point(from.X, from.Y - 1), costs);
