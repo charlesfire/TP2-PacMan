@@ -4,7 +4,7 @@ namespace PathFinder
 {
   public static class PathFinder
   {
-    public static void FindShortestPath(PacmanGrid maze, Point from, Point to)
+    public static Direction FindShortestPath(PacmanGrid maze, Point from, Point to)
     {
       if (from.X < maze.GetWidth() && from.Y < maze.GetHeight() && from.X >= 0 && from.Y >= 0)
       {
@@ -19,7 +19,10 @@ namespace PathFinder
 
         costs[from.X, from.Y] = 0;
         BuildPaths(maze, from, costs);
+        return RecurseFindDirection(costs, from, to);
       }
+
+      return Direction.Undefined;
     }
 
     private static void BuildPaths(PacmanGrid maze, Point from, int[,] costs)
@@ -55,7 +58,7 @@ namespace PathFinder
     //</Charles Lachance>
 
     //<Tommy Bouffard>
-    private Direction RecurseFindDirection(int[,] costs, Point from, Point to)
+    private static Direction RecurseFindDirection(int[,] costs, Point from, Point to)
     {
       if (costs[from.X, from.Y] > 200)
       {
