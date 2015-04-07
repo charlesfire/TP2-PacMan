@@ -43,7 +43,7 @@ namespace PathFinder
       if (mazeRow.Count() > 0)
       {
         mazeHeight = mazeRow.Count() - 1;
-        mazeWidth = mazeRow[0].Length/2 + 1;
+        mazeWidth = mazeRow[0].Split(',').Count();
         mazeElements = new PacmanElement[mazeHeight, mazeWidth];
         for (int i = 0; i < mazeHeight; i++)
         {
