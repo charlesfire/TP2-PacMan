@@ -52,6 +52,59 @@ namespace PathFinder
         BuildPaths(maze, new Point(from.X, from.Y - 1), costs);
       }
     }
+    //</Charles Lachance>
+
+    //<Tommy Bouffard>
+    private Direction RecurseFindDirection(int[,] costs, Point from, Point to)
+    {
+      if (costs[from.X, from.Y] > 200)
+      {
+        return Direction.None;
+      }
+      else if(costs[to.X, to.Y] != 1)
+      {
+        if (costs[to.X, to.Y] < costs[to.X + 1, to.Y])
+        {
+          to.X = to.X + 1;
+          return RecurseFindDirection(costs, from, to);
+        }
+        else if (costs[to.X, to.Y] < costs[to.X, to.Y + 1])
+        {
+          to.Y = to.Y + 1;
+          return RecurseFindDirection(costs, from, to);
+        }
+        else if (costs[to.X, to.Y] < costs[to.X - 1, to.Y])
+        {
+          to.X = to.X - 1;
+          return RecurseFindDirection(costs, from, to);
+        }
+        else if (costs[to.X, to.Y] < costs[to.X, to.Y-1])
+        {
+          to.Y = to.Y - 1;
+          return RecurseFindDirection(costs, from, to);
+        }
+      }
+      else
+      {
+        if (to.X == from.X+1 && to.Y == from.Y)
+        {
+          return Direction.East;
+        }
+        else if (to.X == from.X && to.Y == from.Y+1)
+        {
+          return Direction.South;
+        }
+        else if (to.X == from.X-1 && to.Y == from.Y)
+        {
+          return Direction.West;
+        }
+        else 
+        {
+          return Direction.North;
+        }
+      }
+      return Direction.Undefined;
+    }
+    //</Tommy Bouffard>
   }
 }
-//</Charles Lachance>
