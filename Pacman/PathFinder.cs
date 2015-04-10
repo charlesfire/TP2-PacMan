@@ -58,14 +58,6 @@ namespace PathFinder
     //</Charles Lachance>
 
     //<Tommy Bouffard>
-    /// <summary>
-    /// Cette fonction essaie de déterminer la première direction que le fantôme doit prendre
-    /// pour se rendre au pacman.
-    /// </summary>
-    /// <param name="costs">Tableau de distances</param>
-    /// <param name="from">Position du fantôme</param>
-    /// <param name="to">Position du pacman</param>
-    /// <returns></returns>
     private static Direction RecurseFindDirection(int[,] costs, Point from, Point to)
     {
       if (costs[from.X, from.Y] > 200)
