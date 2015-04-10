@@ -38,16 +38,12 @@ namespace Pacman
 
     private void PacmanForm_Load( object sender, EventArgs e )
     {
-      // A DÉCOMMENTER ÉVENTUELLEMENT
-      aGame.LoadGrid("PacLevels/Level - 1.paclevel");
+      aGame.LoadGrid("D:\\Documents\\GitHub\\TP2-PacMan\\Pacman\\PacLevels\\Level - 1.paclevel");
       
       // Ajuster automatiquement la taille de la fenêtre selon la taille du labyrithe de jeu
       // Optionnel mais peut être intéressant si vous voulez que ça se fasse automatiquement
-      //this.ClientSize = new Size( aGame.GetSize( ).Width, aGame.GetSize( ).Height );
+      this.ClientSize = new Size( aGame.GetSize( ).Width, aGame.GetSize( ).Height );
       mainTimer.Enabled = true;
-      DialogResult dialoguePartieTerminee =
-      MessageBox.Show("Erreur, le fichier de niveau n'a pas pu être trouvé.",
-      "Erreur de chargement", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
     }
   }
 }

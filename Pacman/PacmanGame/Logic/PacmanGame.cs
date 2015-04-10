@@ -66,7 +66,14 @@ namespace Pacman
           switch (grid.GetMazeElementAt(i, j))
           {
             case PacmanElement.Pacman:
-              g.DrawImage(Resources.Pacman,
+              g.DrawImage(Resources.pacman_moving,
+                          i * ELEMENT_WIDTH,
+                          j * ELEMENT_HEIGHT,
+                          ELEMENT_WIDTH,
+                          ELEMENT_HEIGHT);
+              break;
+            case PacmanElement.Wall:
+              g.DrawImage(Resources.Wall,
                           i * ELEMENT_WIDTH,
                           j * ELEMENT_HEIGHT,
                           ELEMENT_WIDTH,
