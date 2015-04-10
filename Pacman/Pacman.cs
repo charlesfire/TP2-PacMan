@@ -2,9 +2,9 @@
 using PathFinder;
 namespace Pacman
 {
-  class Pacman
+  public class Pacman
   {
-    private float speed = 0.0f;
+    private float speed = 20f;
     private float x = 0.0f;
     private float y = 0.0f;
 
@@ -30,7 +30,7 @@ namespace Pacman
 
     public Pacman()
     {
-      speed = 0.0f;
+      speed = 20;
       x = 0.0f;
       y = 0.0f;
     }
@@ -44,7 +44,7 @@ namespace Pacman
               maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Wall)
           {
             maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.Pacman);
-            x++;
+            x += 20;
           }
           break;
         case Direction.North:
@@ -52,7 +52,7 @@ namespace Pacman
               maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1) != PacmanElement.Wall)
           {
             maze.SetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1, PacmanElement.Pacman);
-            y--;
+            y -= 20;
           }
           break;
         case Direction.West:
@@ -60,7 +60,7 @@ namespace Pacman
               maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1) != PacmanElement.Wall)
           {
             maze.SetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1, PacmanElement.Pacman);
-            y++;
+            y += 20;
           }
           break;
         case Direction.South:
@@ -68,7 +68,7 @@ namespace Pacman
               maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Wall)
           {
             maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.Pacman);
-            x--;
+            x -= 20;
           }
           break;
         default:

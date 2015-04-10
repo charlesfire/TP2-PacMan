@@ -18,7 +18,7 @@ namespace Pacman
     public const int ELEMENT_WIDTH = 20;
 
     //Pacman du jeu
-    Pacman pacman = new Pacman();
+    Pacman pacman = null;
 
     //Nombre de fantômes dans le jeu
     private const int NB_GHOSTS = 4;
@@ -36,6 +36,7 @@ namespace Pacman
     /// </summary>
     public PacmanGame()
     {
+      pacman = new Pacman();
       ghosts = new Ghost[NB_GHOSTS];
       grid = new PacmanGrid();
     }
@@ -49,7 +50,7 @@ namespace Pacman
       {
         if (ghost != null)
         {
-          ghost.Update(grid);
+          ghost.Update(grid, pacman);
         }
       }
 
@@ -116,6 +117,17 @@ namespace Pacman
       try
       {
         grid.InitFrom(File.ReadAllText(path));
+        for (int i = 0; i < grid.GetWidth(); i++)
+        {
+          for (int j = 0; j < grid.GetHeight(); j++)
+          {
+            if (grid.GetMazeElementAt(i, j) == PacmanElement.Pacman)
+            {
+              pacman.SetX(i * ELEMENT_WIDTH);
+              pacman.SetY(j * ELEMENT_HEIGHT);
+            }
+          }
+        }
       }
       catch (Exception ex)
       {
