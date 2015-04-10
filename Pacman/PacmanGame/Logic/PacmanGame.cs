@@ -49,7 +49,7 @@ namespace Pacman
       {
         if (ghost != null)
         {
-          ghost.Update(grid);
+          ghost.Update(grid,pacman);
         }
       }
 
@@ -97,6 +97,21 @@ namespace Pacman
                           ELEMENT_WIDTH,
                           ELEMENT_HEIGHT);
               break;
+            case PacmanElement.Pill:
+              g.DrawImage(Resources.Pill,
+                          i * ELEMENT_WIDTH,
+                          j * ELEMENT_HEIGHT,
+                          ELEMENT_WIDTH,
+                          ELEMENT_HEIGHT);
+              break;
+            case PacmanElement.SuperPill:
+              g.DrawImage(Resources.SuperPill,
+                          i * ELEMENT_WIDTH,
+                          j * ELEMENT_HEIGHT,
+                          ELEMENT_WIDTH,
+                          ELEMENT_HEIGHT);
+              break;
+
           }
         }
       }
