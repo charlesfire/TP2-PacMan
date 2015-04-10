@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
+using Pacman.Properties;
 using PathFinder;
 
 namespace Pacman
@@ -34,8 +36,8 @@ namespace Pacman
     public PacmanGame()
     {
       ghosts = new Ghost[NB_GHOSTS];
+      grid = new PacmanGrid();
     }
-    //</Charles Lachance>
 
     // Vous aurez probablement à modifier le type de retour ici pour pouvoir
     // tester la fin de partie.  Par contre, pour vous donner un projet qui
@@ -44,7 +46,10 @@ namespace Pacman
     {
       foreach (Ghost ghost in ghosts)
       {
-        ghost.Update(grid);
+        if (ghost != null)
+        {
+          ghost.Update(grid);
+        }
       }
 
       System.Diagnostics.Debug.WriteLine("Appel de la méthode Update");
@@ -52,9 +57,24 @@ namespace Pacman
 
     public void Draw(Graphics g)
     {
-      // A COMPLETER
       System.Diagnostics.Debug.WriteLine("Appel de la méthode Draw");
 
+      for (int i = 0; i < grid.GetWidth(); i++)
+      {
+        for (int j = 0; j < grid.GetHeight(); j++)
+        {
+          switch (grid.GetMazeElementAt(i, j))
+          {
+            case PacmanElement.Pacman:
+              g.DrawImage(Resources.Pacman,
+                          i * ELEMENT_WIDTH,
+                          j * ELEMENT_HEIGHT,
+                          ELEMENT_WIDTH,
+                          ELEMENT_HEIGHT);
+              break;
+          }
+        }
+      }
 
       // Pour afficher un bitmap inclus dans vos ressources (ex. Ghost.bmp), il suffit de faire
       //g.DrawImage(  Resources.Ghost,
@@ -74,9 +94,19 @@ namespace Pacman
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
+        //<Tommy Bouffard>
+        MessageBox.Show(ex.Message, "Erreur de chargement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //</Tommy Bouffard>
+        Application.Exit();
       }
     }
+
+    public Size GetSize()
+    {
+      return new Size(grid.GetWidth() * ELEMENT_WIDTH, grid.GetHeight() * ELEMENT_HEIGHT);
+    }
+
+    //</Charles Lachance>
   }
 }
 
