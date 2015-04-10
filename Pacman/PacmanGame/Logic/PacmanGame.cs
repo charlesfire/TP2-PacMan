@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Input;
 using Pacman.Properties;
 using PathFinder;
 
@@ -50,6 +51,23 @@ namespace Pacman
         {
           ghost.Update(grid);
         }
+      }
+
+      if (Keyboard.IsKeyDown(Key.Right))
+      {
+        pacman.Move(Direction.East, grid);
+      }
+      else if (Keyboard.IsKeyDown(Key.Up))
+      {
+        pacman.Move(Direction.North, grid);
+      }
+      else if (Keyboard.IsKeyDown(Key.Left))
+      {
+        pacman.Move(Direction.West, grid);
+      }
+      else if (Keyboard.IsKeyDown(Key.Down))
+      {
+        pacman.Move(Direction.South, grid);
       }
 
       System.Diagnostics.Debug.WriteLine("Appel de la méthode Update");
