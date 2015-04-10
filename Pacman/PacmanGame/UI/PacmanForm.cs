@@ -39,7 +39,7 @@ namespace Pacman
     private void PacmanForm_Load( object sender, EventArgs e )
     {
       // A DÉCOMMENTER ÉVENTUELLEMENT
-      //aGame.LoadGrid("maze01.txt");
+      aGame.LoadGrid("PacLevels/Level - 1.paclevel");
       
       // Ajuster automatiquement la taille de la fenêtre selon la taille du labyrithe de jeu
       // Optionnel mais peut être intéressant si vous voulez que ça se fasse automatiquement

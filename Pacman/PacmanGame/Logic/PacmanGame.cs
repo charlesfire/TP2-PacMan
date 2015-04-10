@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.IO;
 using PathFinder;
 
 namespace Pacman
@@ -7,30 +9,31 @@ namespace Pacman
   {
     //<Tommy Bouffard>
     //Hauteur du formulaire du jeu
-    public const int GAME_HEIGHT = 1;
+    public const int ELEMENT_HEIGHT = 20;
+
     //Largeur du formulaire du jeu
-    public const int GAME_WIDTH = 1;
+    public const int ELEMENT_WIDTH = 20;
+
     //Pacman du jeu
     Pacman pacman = new Pacman();
 
     //Nombre de fantômes dans le jeu
-    private int NB_GHOSTS = 4;
+    private const int NB_GHOSTS = 4;
 
     //Tableau des fantômes dans le jeu
     private Ghost[] ghosts = new Ghost[NB_GHOSTS];
-
-    //...? (à compléter)
-    private bool[] pills = new bool[1];
     //</Tommy Bouffard>
 
     //<Charles Lachance>
+
+    private PacmanGrid grid = null;
+
     /// <summary>
     /// Constructeur du jeu de Pacman
     /// </summary>
     public PacmanGame()
     {
       ghosts = new Ghost[NB_GHOSTS];
-      pills = new bool[1];
     }
     //</Charles Lachance>
 
@@ -39,7 +42,11 @@ namespace Pacman
     // compile, je n'avais pas le choix de mettre "void".
     public void Update()
     {
-      // A COMPLETER
+      foreach (Ghost ghost in ghosts)
+      {
+        ghost.Update(grid);
+      }
+
       System.Diagnostics.Debug.WriteLine("Appel de la méthode Update");
     }
 
@@ -57,6 +64,18 @@ namespace Pacman
       //              hauteur du bitmap dans l'écran);
 
 
+    }
+
+    public void LoadGrid(string path)
+    {
+      try
+      {
+        grid.InitFrom(File.ReadAllText(path));
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
     }
   }
 }
