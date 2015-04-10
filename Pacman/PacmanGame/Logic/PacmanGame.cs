@@ -64,11 +64,11 @@ namespace Pacman
       }
       else if (Keyboard.IsKeyDown(Key.Left))
       {
-        pacman.Move(Direction.West, grid);
+        pacman.Move(Direction.South, grid);
       }
       else if (Keyboard.IsKeyDown(Key.Down))
       {
-        pacman.Move(Direction.South, grid);
+        pacman.Move(Direction.West, grid);
       }
 
       System.Diagnostics.Debug.WriteLine("Appel de la méthode Update");

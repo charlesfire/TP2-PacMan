@@ -49,19 +49,21 @@
     <Compile Include="EndGameResult.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Ghost.cs" />
+    <Compile Include="Pacman.cs" />
     <Compile Include="PacmanElement.cs" />
-    <Compile Include="PacmanGame\UI\Form1.cs">
+    <Compile Include="PacmanGame\Logic\PacmanGame.cs" />
+    <Compile Include="PacmanGame\UI\PacmanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PacmanGame\UI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PacmanGame\UI\PacmanForm.Designer.cs">
+      <DependentUpon>PacmanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PacmanGame\Logic\PacmanGame.cs" />
     <Compile Include="PacmanGrid.cs" />
+    <Compile Include="PathFinder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PacmanGame\UI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="PacmanGame\UI\PacmanForm.resx">
+      <DependentUpon>PacmanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +101,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PacSounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bitmaps\pacman-moving.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bitmaps\Pill.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bitmaps\SuperPill.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

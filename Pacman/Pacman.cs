@@ -43,6 +43,7 @@ namespace Pacman
           if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Undefined &&
               maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Wall)
           {
+            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
             maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.Pacman);
             x += 20;
           }
@@ -51,6 +52,7 @@ namespace Pacman
           if (maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1) != PacmanElement.Undefined &&
               maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1) != PacmanElement.Wall)
           {
+            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
             maze.SetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1, PacmanElement.Pacman);
             y -= 20;
           }
@@ -59,6 +61,7 @@ namespace Pacman
           if (maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1) != PacmanElement.Undefined &&
               maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1) != PacmanElement.Wall)
           {
+            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
             maze.SetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1, PacmanElement.Pacman);
             y += 20;
           }
@@ -67,6 +70,7 @@ namespace Pacman
           if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Undefined &&
               maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Wall)
           {
+            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
             maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.Pacman);
             x -= 20;
           }
