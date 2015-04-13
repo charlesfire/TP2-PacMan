@@ -64,11 +64,11 @@ namespace Pacman
       }
       else if (Keyboard.IsKeyDown(Key.Left))
       {
-        pacman.Move(Direction.South, grid);
+        pacman.Move(Direction.West, grid);
       }
       else if (Keyboard.IsKeyDown(Key.Down))
       {
-        pacman.Move(Direction.West, grid);
+        pacman.Move(Direction.South, grid);
       }
 
       System.Diagnostics.Debug.WriteLine("Appel de la méthode Update");
@@ -92,10 +92,10 @@ namespace Pacman
                   g.RotateTransform(270f);
                   break;
                 case Direction.West:
-                  g.RotateTransform(90f);
+                  g.RotateTransform(180f);
                   break;
                 case Direction.South:
-                  g.RotateTransform(180f);
+                  g.RotateTransform(90f);
                   break;
                 default:
                   break;

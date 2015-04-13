@@ -45,46 +45,19 @@ namespace Pacman
     public void Move(Direction direction, PacmanGrid maze)
     {
       this.direction = direction;
-      switch(direction)
+
+      if (direction != Direction.Undefined && direction != Direction.None)
       {
-        case Direction.East:
-          if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Undefined &&
-              maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Wall)
-          {
-            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
-            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + 1, (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.Pacman);
-            x += 20;
-          }
-          break;
-        case Direction.North:
-          if (maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1) != PacmanElement.Undefined &&
-              maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1) != PacmanElement.Wall)
-          {
-            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
-            maze.SetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) - 1, PacmanElement.Pacman);
-            y -= 20;
-          }
-          break;
-        case Direction.West:
-          if (maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1) != PacmanElement.Undefined &&
-              maze.GetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1) != PacmanElement.Wall)
-          {
-            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
-            maze.SetMazeElementAt((int)x / PacmanGame.ELEMENT_WIDTH, ((int)y / PacmanGame.ELEMENT_HEIGHT) + 1, PacmanElement.Pacman);
-            y += 20;
-          }
-          break;
-        case Direction.South:
-          if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Undefined &&
-              maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT) != PacmanElement.Wall)
-          {
-            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
-            maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) - 1, (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.Pacman);
-            x -= 20;
-          }
-          break;
-        default:
-          break;
+        int xMove = ((int)direction - 2) % 2;
+        int yMove = ((int)direction - 3) % 2;
+        if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) != PacmanElement.Undefined &&
+                maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) != PacmanElement.Wall)
+        {
+          maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
+          maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove, PacmanElement.Pacman);
+          x += 20 * xMove;
+          y += 20 * yMove;
+        }
       }
     }
   }
