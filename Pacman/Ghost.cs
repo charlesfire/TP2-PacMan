@@ -127,6 +127,11 @@ namespace Pacman
     {
       cowardState = coward;
     }
+
+    public static bool GetState()
+    {
+      return cowardState;
+    }
   }
 }
   //</Tommy Bouffard>

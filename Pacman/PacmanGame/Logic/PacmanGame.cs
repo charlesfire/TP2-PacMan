@@ -129,6 +129,24 @@ namespace Pacman
                           ELEMENT_WIDTH,
                           ELEMENT_HEIGHT);
               break;
+            case PacmanElement.Ghost:
+              if (Ghost.GetState() == false)
+              {
+                g.DrawImage(Resources.Ghost,
+                                      i * ELEMENT_WIDTH,
+                                      j * ELEMENT_HEIGHT,
+                                      ELEMENT_WIDTH,
+                                      ELEMENT_HEIGHT);
+              }
+              else
+              {
+                g.DrawImage(Resources.GhostWeak,
+                                      i * ELEMENT_WIDTH,
+                                      j * ELEMENT_HEIGHT,
+                                      ELEMENT_WIDTH,
+                                      ELEMENT_HEIGHT);
+              }
+              break;
               //</Tommy Bouffard>
           }
         }
