@@ -8,7 +8,10 @@ namespace PathFinder
     private PacmanElement[,] mazeElements = null;
     private int mazeWidth = 0;
     private int mazeHeight = 0;
-
+    //<Tommy Bouffard>
+    //Nombre de points dans la partie
+    private int pillCount = 0;
+    //</Tommy Bouffard>
     public int GetHeight()
     {
       return mazeHeight;
@@ -53,16 +56,49 @@ namespace PathFinder
             int element = 7;
             int.TryParse(elements[j], out element);
             mazeElements[i, j] = (PacmanElement)element;
+            //<Tommy Bouffard>
+            if (element == 4 || element == 6)
+            {
+              pillCount++;
+            }
+            //</Tommy Bouffard>
           }
         }
       }
     }
+    //<Tommy Bouffard>
+
+    /// <summary>
+    /// Obtient la valeur du nombre de points restants.
+    /// </summary>
+    /// <returns>nombre de points restants</returns>
+    public int GetPillCount()
+    {
+      return pillCount;
+    }
+    /// <summary>
+    /// Change la valeur du nombre de points restants selon une valeur reçue
+    /// </summary>
+    /// <param name="recievedPillCount">Nouveau nombre de points restants</param>
+    public void SetPillCount(int recievedPillCount)
+    {
+      pillCount = recievedPillCount;
+    }
+    /// <summary>
+    /// Réduis le nombre de points de 1.
+    /// </summary>
+    public void ReducePillCount()
+    {
+      pillCount--;
+    }
+    //</Tommy Bouffard>
 
     public PacmanGrid()
     {
       mazeElements = null;
       mazeWidth = 0;
       mazeHeight = 0;
+      pillCount = 0;
     }
   }
 }

@@ -18,7 +18,7 @@ namespace Pacman
     public const int ELEMENT_WIDTH = 20;
 
     //Pacman du jeu
-    Pacman pacman = null;
+    private Pacman pacman = null;
 
     //Nombre de fantômes dans le jeu
     private const int NB_GHOSTS = 4;
@@ -114,6 +114,7 @@ namespace Pacman
                           ELEMENT_WIDTH,
                           ELEMENT_HEIGHT);
               break;
+              //<Tommy Bouffard>
             case PacmanElement.Pill:
               g.DrawImage(Resources.Pill,
                           i * ELEMENT_WIDTH,
@@ -128,7 +129,7 @@ namespace Pacman
                           ELEMENT_WIDTH,
                           ELEMENT_HEIGHT);
               break;
-
+              //</Tommy Bouffard>
           }
         }
       }

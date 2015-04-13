@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+using Pacman;
 
 namespace Pacman
 {
@@ -44,6 +41,12 @@ namespace Pacman
       // Optionnel mais peut être intéressant si vous voulez que ça se fasse automatiquement
       this.ClientSize = new Size( aGame.GetSize( ).Width, aGame.GetSize( ).Height );
       mainTimer.Enabled = true;
+    }
+
+    private void TimerEnd(object sender, EventArgs e)
+    {
+      CowardTimer.Enabled = false;
+      Ghost.GhostChangeState(false);
     }
   }
 }

@@ -11,7 +11,7 @@ namespace Pacman
     //Position en Y du fantôme
     private int yPosition = 0;
     //État du fantôme (true si le pacman a une super pastille, faux si il n'en a pas.
-    private bool cowardState = false;
+    private static bool cowardState = false;
     //Nombre de fantômes
     private const int instancecount = 4;
     //Nombre de mise à jours
@@ -118,6 +118,14 @@ namespace Pacman
           Move(PathFinder.PathFinder.FindShortestPath(aMaze, ghostPoint, pacPoint), aMaze);
         }
       }
+    }
+    /// <summary>
+    /// Cette fonction change l'état du fantôme
+    /// </summary>
+    /// <param name="coward">État peureux du fantôme</param>
+    public static void GhostChangeState(bool coward)
+    {
+      cowardState = coward;
     }
   }
 }

@@ -31,12 +31,18 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.mainTimer = new System.Windows.Forms.Timer(this.components);
+      this.CowardTimer = new System.Windows.Forms.Timer(this.components);
       this.SuspendLayout();
       // 
       // mainTimer
       // 
       this.mainTimer.Interval = 16;
       this.mainTimer.Tick += new System.EventHandler(this.OnTimer);
+      // 
+      // CowardTimer
+      // 
+      this.CowardTimer.Interval = 15000;
+      this.CowardTimer.Tick += new System.EventHandler(this.TimerEnd);
       // 
       // Form1
       // 
@@ -61,6 +67,7 @@
     #endregion
 
     private System.Windows.Forms.Timer mainTimer;
+    private System.Windows.Forms.Timer CowardTimer;
   }
 }
 
