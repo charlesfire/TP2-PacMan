@@ -1,4 +1,4 @@
-﻿
+﻿//<Charles Lachance>
 using PathFinder;
 namespace Pacman
 {
@@ -7,6 +7,7 @@ namespace Pacman
     private float speed = 20f;
     private float x = 0.0f;
     private float y = 0.0f;
+    private Direction direction = Direction.None;
 
     public float GetX()
     {
@@ -16,6 +17,11 @@ namespace Pacman
     public float GetY()
     {
       return y;
+    }
+
+    public Direction GetDirection()
+    {
+      return direction;
     }
 
     public void SetX(float x)
@@ -33,10 +39,12 @@ namespace Pacman
       speed = 20;
       x = 0.0f;
       y = 0.0f;
+      direction = Direction.East;
     }
 
     public void Move(Direction direction, PacmanGrid maze)
     {
+      this.direction = direction;
       switch(direction)
       {
         case Direction.East:
@@ -81,3 +89,4 @@ namespace Pacman
     }
   }
 }
+//</Charles Lachance>

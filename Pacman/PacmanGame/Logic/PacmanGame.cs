@@ -85,11 +85,27 @@ namespace Pacman
           switch (grid.GetMazeElementAt(i, j))
           {
             case PacmanElement.Pacman:
+              g.TranslateTransform(i * ELEMENT_WIDTH + ELEMENT_WIDTH / 2, j * ELEMENT_HEIGHT + ELEMENT_HEIGHT/2);
+              switch (pacman.GetDirection())
+              {
+                case Direction.North:
+                  g.RotateTransform(270f);
+                  break;
+                case Direction.West:
+                  g.RotateTransform(90f);
+                  break;
+                case Direction.South:
+                  g.RotateTransform(180f);
+                  break;
+                default:
+                  break;
+              }
               g.DrawImage(Resources.pacman_moving,
-                          i * ELEMENT_WIDTH,
-                          j * ELEMENT_HEIGHT,
+                          -ELEMENT_WIDTH / 2,
+                          -ELEMENT_HEIGHT / 2,
                           ELEMENT_WIDTH,
                           ELEMENT_HEIGHT);
+              g.ResetTransform();
               break;
             case PacmanElement.Wall:
               g.DrawImage(Resources.Wall,
@@ -116,15 +132,6 @@ namespace Pacman
           }
         }
       }
-
-      // Pour afficher un bitmap inclus dans vos ressources (ex. Ghost.bmp), il suffit de faire
-      //g.DrawImage(  Resources.Ghost,
-      //              positionX, 
-      //              positionY, 
-      //              largeur du bitmap dans l'écran, 
-      //              hauteur du bitmap dans l'écran);
-
-
     }
 
     public void LoadGrid(string path)
