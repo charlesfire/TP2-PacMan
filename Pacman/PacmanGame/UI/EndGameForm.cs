@@ -16,11 +16,11 @@ namespace Pacman
     {
       if (result == EndGameResult.Win)
       {
-        lblVictoryOrLoose.Text = "Victoire!";
+        lblVictoryOrLose.Text = "Victoire!";
       }
       else
       {
-        lblVictoryOrLoose.Text = "Defaite...";
+        lblVictoryOrLose.Text = "Defaite...";
       }
     }
 
