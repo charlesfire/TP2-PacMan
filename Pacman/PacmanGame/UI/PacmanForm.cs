@@ -4,14 +4,19 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using Pacman;
+using System.Collections.Generic;
 
 namespace Pacman
 {
   public partial class Form1 : Form
   {
+    //<Charles Lachance>
+    private string[] levelsPath = null;
+    
     public Form1( )
     {
       InitializeComponent( );
+      levelsPath = new string [0];
     }
 
     /// <summary>
@@ -29,6 +34,7 @@ namespace Pacman
       {
 
       }
+      //</Charles Lachance>
     }
     private void OnTimer( object sender, EventArgs e )
     {
@@ -43,12 +49,15 @@ namespace Pacman
 
     private void PacmanForm_Load( object sender, EventArgs e )
     {
-      aGame.LoadGrid("./PacLevels/Level - 1.paclevel");
+      //<Charles Lachance>
+      levelsPath = File.ReadAllLines("./PacLevels/LevelList.txt");
+      aGame.LoadGrid(levelsPath[0]);
       
       // Ajuster automatiquement la taille de la fenêtre selon la taille du labyrithe de jeu
       // Optionnel mais peut être intéressant si vous voulez que ça se fasse automatiquement
       this.ClientSize = new Size( aGame.GetSize( ).Width, aGame.GetSize( ).Height );
       mainTimer.Enabled = true;
+      //</Charles Lachance>
     }
 
     private void TimerEnd(object sender, EventArgs e)
