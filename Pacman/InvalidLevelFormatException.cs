@@ -1,4 +1,8 @@
 ﻿//<Charles Lachance>
+/*
+ * Classe d'exception représentant une erreur de format dans un fichier de niveau.
+ * Créer par Charles Lachance
+ */
 using System;
 
 namespace Pacman
@@ -6,12 +10,22 @@ namespace Pacman
   [Serializable()]
   public class InvalidLevelFormatException : System.Exception
   {
-    public InvalidLevelFormatException() : base() { }
-    public InvalidLevelFormatException(string message) : base(message) { }
-    public InvalidLevelFormatException(string message, System.Exception inner) : base(message, inner) { }
+    /// <summary>
+    /// Constructeur par défaut
+    /// </summary>
+    public InvalidLevelFormatException() : base()
+    {
 
-    protected InvalidLevelFormatException(System.Runtime.Serialization.SerializationInfo info,
-        System.Runtime.Serialization.StreamingContext context) { }
+    }
+
+    /// <summary>
+    /// Constructeur prenant un message d'erreur en paramêtre.
+    /// </summary>
+    /// <param name="message">Le message d'erreur à conserver</param>
+    public InvalidLevelFormatException(string message) : base(message) 
+    {
+    
+    }
   }
 }
 //</Charles Lachance>

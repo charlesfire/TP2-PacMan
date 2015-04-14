@@ -1,4 +1,8 @@
 ﻿//<Charles Lachance>
+/*
+ * Énumération représentant une direction orienté selon les points cardinaux.
+ * Créer par Charles Lachance
+ */
 namespace PathFinder
 {
   public enum Direction
