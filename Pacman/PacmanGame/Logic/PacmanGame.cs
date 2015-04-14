@@ -51,6 +51,10 @@ namespace Pacman
         if (ghost != null)
         {
           ghost.Update(grid, pacman);
+          if (ghost.GetX() == (int)pacman.GetX()/20f && ghost.GetY() == (int)pacman.GetY()/20f)
+          {
+            return EndGameResult.Loose;
+          }
         }
       }
 
