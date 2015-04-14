@@ -27,6 +27,7 @@ namespace Pacman
     PacmanGame aGame = new PacmanGame();
     private void Update()
     {
+      CheckIfSuperPill(aGame.GetPacman());
       EndGameResult result = aGame.Update();
       if (result == EndGameResult.Win)
       {
@@ -88,6 +89,21 @@ namespace Pacman
     private void TimerSpawn(object sender, EventArgs e)
     {
       aGame.SpawnGhosts();
+    }
+
+    private void CheckIfSuperPill(Pacman pacman)
+    {
+      if (pacman.GetHasSuperPill() == true)
+      {
+        pacman.SetHasSuperPill(false);
+        if (CowardTimer.Enabled == true)
+        {
+          CowardTimer = new Timer();
+          CowardTimer.Interval = 5000;
+        }
+        CowardTimer.Enabled = true;
+        Ghost.GhostChangeState(true);
+      }
     }
   }
 }

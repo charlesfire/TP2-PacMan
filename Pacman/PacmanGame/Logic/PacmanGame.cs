@@ -146,8 +146,13 @@ namespace Pacman
           ghost.Draw(g,ELEMENT_WIDTH,ELEMENT_HEIGHT);
         }
       }
-      //</Tommy Bouffard>
     }
+
+    public Pacman GetPacman()
+    {
+      return pacman;
+    }
+    //</Tommy Bouffard>
 
     public void LoadGrid(string path)
     {

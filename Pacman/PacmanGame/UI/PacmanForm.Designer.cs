@@ -42,7 +42,7 @@
       // 
       // CowardTimer
       // 
-      this.CowardTimer.Interval = 15000;
+      this.CowardTimer.Interval = 5000;
       this.CowardTimer.Tick += new System.EventHandler(this.TimerEnd);
       // 
       // timerGhostSpawner
@@ -74,8 +74,8 @@
     #endregion
 
     private System.Windows.Forms.Timer mainTimer;
-    private System.Windows.Forms.Timer CowardTimer;
     private System.Windows.Forms.Timer timerGhostSpawner;
+    private System.Windows.Forms.Timer CowardTimer;
   }
 }
 
