@@ -149,6 +149,7 @@ namespace Pacman
     {
       try
       {
+        ghosts = new Ghost[NB_GHOSTS];
         grid.InitFrom(File.ReadAllText(path));
         for (int i = 0; i < grid.GetWidth(); i++)
         {

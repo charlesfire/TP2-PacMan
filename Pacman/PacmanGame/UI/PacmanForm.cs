@@ -12,11 +12,13 @@ namespace Pacman
   {
     //<Charles Lachance>
     private string[] levelsPath = null;
+    private int currentLevel = 0;
     
     public Form1( )
     {
       InitializeComponent( );
       levelsPath = new string [0];
+      currentLevel = 0;
     }
 
     /// <summary>
@@ -28,7 +30,16 @@ namespace Pacman
       EndGameResult result = aGame.Update();
       if (result == EndGameResult.Win)
       {
-        Application.Exit();
+        currentLevel++;
+        if (currentLevel < levelsPath.Length)
+        {
+          aGame.LoadGrid(levelsPath[currentLevel]);
+          this.ClientSize = new Size(aGame.GetSize().Width, aGame.GetSize().Height);
+        }
+        else
+        {
+          Application.Exit();
+        }
       }
       else if (result == EndGameResult.Loose)
       {
@@ -51,7 +62,7 @@ namespace Pacman
     {
       //<Charles Lachance>
       levelsPath = File.ReadAllLines("./PacLevels/LevelList.txt");
-      aGame.LoadGrid(levelsPath[0]);
+      aGame.LoadGrid(levelsPath[currentLevel]);
       
       // Ajuster automatiquement la taille de la fenêtre selon la taille du labyrithe de jeu
       // Optionnel mais peut être intéressant si vous voulez que ça se fasse automatiquement
