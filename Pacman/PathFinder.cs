@@ -66,17 +66,23 @@ namespace PathFinder
     /// <param name="costs">Tableau de distances</param>
     /// <param name="from">Position du fantôme</param>
     /// <param name="to">Position de la destination</param>
-    /// <returns></returns>
-    private static Direction RecurseFindDirection(int[,] costs, Point from, Point to)
+    /// <returns>La première direction qui mène au chemin le plus court</returns>
+
+    //Je n'ai pas le choix de mettre la fonction public pour faire les tests unitaires.
+
+    public static Direction RecurseFindDirection(int[,] costs, Point from, Point to)
     {
+      //Condition de fin: Il n'existe pas de chemin possible dans ce cas.
       if (costs[from.X, from.Y] == int.MaxValue)
       {
         return Direction.None;
       }
-      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1) && to.X > 0 && to.Y > 0)
+      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1) && to.X >= 0 && to.Y >= 0)
       {
+        //Condition de fin: le fantôme est adjacent au pacman
         if (costs[to.X, to.Y] != 1)
         {
+          //(Pour les 4 cas) Si la distance est plus petite lorsq'on change de case, on rappèle la fonction en cette case.
           if (costs[to.X, to.Y] > costs[to.X + 1, to.Y])
           {
             to.X = to.X + 1;
@@ -99,6 +105,7 @@ namespace PathFinder
           }
         }
       }
+      //Il faut trouver la bonne case adjacente.
       if (to.X == from.X + 1 && to.Y == from.Y)
       {
         return Direction.East;
@@ -115,6 +122,7 @@ namespace PathFinder
       {
         return Direction.North;
       }
+      //Condition de fin selement pour que le code compile.
       return Direction.Undefined;
     }
   }
