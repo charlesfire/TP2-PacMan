@@ -1,0 +1,21 @@
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Debug\Pacman.exe.config
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\bin\Debug\Pacman.exe.config
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\bin\Debug\Pacman.exe
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\bin\Debug\Pacman.pdb
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.Form1.resources
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.Properties.Resources.resources
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.csproj.GenerateResource.Cache
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.exe
+d:\WORK HERE NOT IN GITHUB\TP2-PacMan\Pacman\obj\Debug\Pacman.pdb
+d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\bin\Debug\Pacman.exe.config
+d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\obj\Debug\Pacman.exe
+d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\obj\Debug\Pacman.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.exe
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Debug\Pacman.exe
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Debug\Pacman.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.Form1.resources
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.Properties.Resources.resources
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.csproj.GenerateResource.Cache
