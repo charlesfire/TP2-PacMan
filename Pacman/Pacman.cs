@@ -8,6 +8,17 @@ namespace Pacman
     private float x = 0.0f;
     private float y = 0.0f;
     private Direction direction = Direction.None;
+    private bool hasSuperPill = false;
+
+    public bool GetHasSuperPill()
+    {
+      return hasSuperPill;
+    }
+
+    public void SetHasSuperPill(bool hasSuperPill)
+    {
+      this.hasSuperPill = hasSuperPill;
+    }
 
     public float GetX()
     {
@@ -40,6 +51,7 @@ namespace Pacman
       x = 0.0f;
       y = 0.0f;
       direction = Direction.East;
+      hasSuperPill = false;
     }
 
     public void Move(Direction direction, PacmanGrid maze)
@@ -54,9 +66,13 @@ namespace Pacman
                 maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) != PacmanElement.Wall)
         {
           maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
-          if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) == PacmanElement.Pill ||
-              maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) == PacmanElement.SuperPill)
+          if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) == PacmanElement.Pill)
           {
+            maze.ReducePillCount();
+          }
+          else if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) == PacmanElement.SuperPill)
+          {
+            hasSuperPill = true;
             maze.ReducePillCount();
           }
 
