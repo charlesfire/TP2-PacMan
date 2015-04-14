@@ -55,6 +55,11 @@ namespace PathFinder
           {
             int element = 7;
             int.TryParse(elements[j], out element);
+            if (element >= 7)
+            {
+              throw new Pacman.InvalidLevelFormatException("Format de niveau non valide.");
+            }
+
             mazeElements[i, j] = (PacmanElement)element;
             //<Tommy Bouffard>
             if (element == 4 || element == 6)
