@@ -145,7 +145,12 @@ namespace Pacman
     {
       cowardState = coward;
     }
-    
+    /// <summary>
+    /// Dessine le fantôme sur l'écran du jeu.
+    /// </summary>
+    /// <param name="g"></param>
+    /// <param name="ELEMENT_WIDTH"></param>
+    /// <param name="ELEMENT_HEIGHT"></param>
     public void Draw(Graphics g, int ELEMENT_WIDTH, int ELEMENT_HEIGHT)
     {
       if (GetState() == false)
@@ -165,11 +170,22 @@ namespace Pacman
                               ELEMENT_HEIGHT);
       }
     }
-
+    /// <summary>
+    /// Obtient la valeur de l'état de choc du fantôme
+    /// </summary>
+    /// <returns>État de peur du fantôme</returns>
     public static bool GetState()
     {
       return cowardState;
     }
+    /// <summary>
+    /// Obtient la condition de si le fantôme est au dessus d'une pastille
+    /// </summary>
+    /// <returns>true si il a une pastille, faux si il n'en a pas</returns>
+    public bool HasPill()
+    {
+      return (elementUnderGhost == PacmanElement.Pill || elementUnderGhost == PacmanElement.SuperPill);
+    }
   }
 }
-  //</Tommy Bouffard>
+//</Tommy Bouffard>
