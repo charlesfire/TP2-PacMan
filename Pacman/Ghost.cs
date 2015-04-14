@@ -22,7 +22,7 @@ namespace Pacman
     //Nombre de mise à jours
     private int nbUpdates = 0;
     //Nombre de mise à jours effectués avant un déplacement
-    private int nbUpdatesBeforeMove = 20;
+    private int nbUpdatesBeforeMove = 200;
     //Vitesse du fantôme (nombre de cases)
     public int speed = 1;
     //x Initial du fantôme
@@ -120,7 +120,7 @@ namespace Pacman
       if (nbUpdates % nbUpdatesBeforeMove == 0)
       {
         Point ghostPoint = new Point(xPosition, yPosition);
-        Point pacPoint = new Point((int)pacman.GetX(), (int)pacman.GetY());
+        Point pacPoint = new Point((int)(pacman.GetX()/20f), (int)(pacman.GetY()/20f));
         if (cowardState == true)
         {
           Move(PathFinder.PathFinder.FindShortestPath(aMaze,ghostPoint, new Point(initX,initY)),aMaze);

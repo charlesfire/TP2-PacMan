@@ -13,15 +13,17 @@ namespace PathFinder
         {
           for (int j = 0; j < maze.GetHeight(); j++)
           {
-            costs[i,j] = int.MaxValue;
+            costs[i, j] = int.MaxValue;
           }
         }
         costs[from.X, from.Y] = 0;
         BuildPaths(maze, from, costs);
         return RecurseFindDirection(costs, from, to);
       }
-
-      return Direction.Undefined;
+      else
+      {
+        return Direction.Undefined;
+      }
     }
 
     private static void BuildPaths(PacmanGrid maze, Point from, int[,] costs)
@@ -67,11 +69,11 @@ namespace PathFinder
     /// <returns></returns>
     private static Direction RecurseFindDirection(int[,] costs, Point from, Point to)
     {
-      if (costs[from.X, from.Y] > 200)
+      if (costs[from.X, from.Y] == int.MaxValue)
       {
         return Direction.None;
       }
-      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1))
+      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1) && to.X<0 && to.Y<0)
       {
         if (costs[to.X, to.Y] != 1)
         {

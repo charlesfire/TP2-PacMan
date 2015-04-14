@@ -1,5 +1,4 @@
-﻿//<Charles Lachance>
-using System;
+﻿using System;
 
 namespace Pacman
 {
@@ -14,4 +13,3 @@ namespace Pacman
         System.Runtime.Serialization.StreamingContext context) { }
   }
 }
-//</Charles Lachance>
