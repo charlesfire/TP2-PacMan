@@ -32,6 +32,7 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.mainTimer = new System.Windows.Forms.Timer(this.components);
       this.CowardTimer = new System.Windows.Forms.Timer(this.components);
+      this.timerGhostSpawner = new System.Windows.Forms.Timer(this.components);
       this.SuspendLayout();
       // 
       // mainTimer
@@ -43,6 +44,12 @@
       // 
       this.CowardTimer.Interval = 15000;
       this.CowardTimer.Tick += new System.EventHandler(this.TimerEnd);
+      // 
+      // timerGhostSpawner
+      // 
+      this.timerGhostSpawner.Enabled = true;
+      this.timerGhostSpawner.Interval = 2000;
+      this.timerGhostSpawner.Tick += new System.EventHandler(this.TimerSpawn);
       // 
       // Form1
       // 
@@ -68,6 +75,7 @@
 
     private System.Windows.Forms.Timer mainTimer;
     private System.Windows.Forms.Timer CowardTimer;
+    private System.Windows.Forms.Timer timerGhostSpawner;
   }
 }
 
