@@ -20,7 +20,15 @@ namespace Pacman
     PacmanGame aGame = new PacmanGame();
     private void Update()
     {
-      aGame.Update();
+      EndGameResult result = aGame.Update();
+      if (result == EndGameResult.Win)
+      {
+        Application.Exit();
+      }
+      else if (result == EndGameResult.Loose)
+      {
+
+      }
     }
     private void OnTimer( object sender, EventArgs e )
     {
@@ -35,7 +43,7 @@ namespace Pacman
 
     private void PacmanForm_Load( object sender, EventArgs e )
     {
-      aGame.LoadGrid("D:\\WORK HERE NOT IN GITHUB\\TP2-PacMan\\Pacman\\PacLevels\\Level - 1.paclevel");
+      aGame.LoadGrid("./PacLevels/Level - 1.paclevel");
       
       // Ajuster automatiquement la taille de la fenêtre selon la taille du labyrithe de jeu
       // Optionnel mais peut être intéressant si vous voulez que ça se fasse automatiquement

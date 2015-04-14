@@ -45,7 +45,7 @@ namespace Pacman
     // Vous aurez probablement à modifier le type de retour ici pour pouvoir
     // tester la fin de partie.  Par contre, pour vous donner un projet qui
     // compile, je n'avais pas le choix de mettre "void".
-    public void Update()
+    public EndGameResult Update()
     {
       foreach (Ghost ghost in ghosts)
       {
@@ -72,13 +72,16 @@ namespace Pacman
         pacman.Move(Direction.South, grid);
       }
 
-      System.Diagnostics.Debug.WriteLine("Appel de la méthode Update");
+      if (grid.GetPillCount() == 0)
+      {
+        return EndGameResult.Win;
+      }
+      
+      return EndGameResult.NotFinished;
     }
 
     public void Draw(Graphics g)
     {
-      System.Diagnostics.Debug.WriteLine("Appel de la méthode Draw");
-
       for (int i = 0; i < grid.GetWidth(); i++)
       {
         for (int j = 0; j < grid.GetHeight(); j++)
@@ -160,7 +163,7 @@ namespace Pacman
             }
             if (grid.GetMazeElementAt(i,j) == PacmanElement.Ghost)
             {
-              ghosts[ghostNumber] = new Ghost(i, j);
+              //ghosts[ghostNumber] = new Ghost(i, j);
               ghostNumber++;
             }
           }

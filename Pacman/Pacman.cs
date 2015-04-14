@@ -54,9 +54,15 @@ namespace Pacman
                 maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) != PacmanElement.Wall)
         {
           maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH), (int)y / PacmanGame.ELEMENT_HEIGHT, PacmanElement.None);
+          if (maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) == PacmanElement.Pill ||
+              maze.GetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove) == PacmanElement.SuperPill)
+          {
+            maze.ReducePillCount();
+          }
+
           maze.SetMazeElementAt(((int)x / PacmanGame.ELEMENT_WIDTH) + xMove, ((int)y / PacmanGame.ELEMENT_HEIGHT) + yMove, PacmanElement.Pacman);
-          x += 20 * xMove;
-          y += 20 * yMove;
+          x += PacmanGame.ELEMENT_WIDTH * xMove;
+          y += PacmanGame.ELEMENT_HEIGHT * yMove;
         }
       }
     }

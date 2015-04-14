@@ -49,6 +49,7 @@
     <Compile Include="EndGameResult.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Ghost.cs" />
+    <Compile Include="InvalidLevelFormatException.cs" />
     <Compile Include="Pacman.cs" />
     <Compile Include="PacmanElement.cs" />
     <Compile Include="PacmanGame\Logic\PacmanGame.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="PathFinder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="PacmanGame\UI\PacmanForm.resx">
       <DependentUpon>PacmanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,7 +72,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="PacLevels\Level - 1.paclevel" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
