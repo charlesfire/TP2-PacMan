@@ -177,19 +177,17 @@ namespace Pacman
     public void SpawnGhosts()
     {
       int ghostNumber = 0;
-      for (int i = 0; i < grid.GetWidth(); i++)
+      if (ghosts[ghosts.Length - 1] == null)
       {
-        for (int j = 0; j < grid.GetHeight(); j++)
-       {
-          if (grid.GetMazeElementAt(i, j) == PacmanElement.Pacman)
+        for (int i = 0; i < grid.GetWidth(); i++)
+        {
+          for (int j = 0; j < grid.GetHeight(); j++)
           {
-            pacman.SetX(i * ELEMENT_WIDTH);
-            pacman.SetY(j * ELEMENT_HEIGHT);
-          }
-          if (grid.GetMazeElementAt(i,j) == PacmanElement.Ghost)
-          {
-            ghosts[ghostNumber] = new Ghost(i, j);
-            ghostNumber++;
+            if (grid.GetMazeElementAt(i, j) == PacmanElement.Ghost)
+            {
+              ghosts[ghostNumber] = new Ghost(i, j);
+              ghostNumber++;
+            }
           }
         }
       }

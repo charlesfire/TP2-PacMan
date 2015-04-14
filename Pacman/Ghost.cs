@@ -23,8 +23,6 @@ namespace Pacman
     private int nbUpdates = 0;
     //Nombre de mise à jours effectués avant un déplacement
     private int nbUpdatesBeforeMove = 5;
-    //Vitesse du fantôme (nombre de cases)
-    public int speed = 1;
     //x Initial du fantôme
     private int initX = 0;
     //y initial du fantôme

@@ -80,7 +80,6 @@ namespace Pacman
     private void TimerSpawn(object sender, EventArgs e)
     {
       aGame.SpawnGhosts();
-      timerGhostSpawner.Enabled = false;
     }
   }
 }
