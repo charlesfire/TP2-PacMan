@@ -186,7 +186,7 @@ namespace Pacman
     public void SpawnGhosts()
     {
       int ghostNumber = 0;
-      if (ghosts[ghosts.Length - 1] == null)
+      if (ghosts[ghosts.Length - 1] == null && ghosts[ghosts.Length-2] == null && ghosts[0] == null && ghosts[1]==null)
       {
         for (int i = 0; i < grid.GetWidth(); i++)
         {
