@@ -99,22 +99,22 @@ namespace PathFinder
           }
         }
       }
-        if (to.X == from.X + 1 && to.Y == from.Y)
-        {
-          return Direction.East;
-        }
-        else if (to.X == from.X && to.Y == from.Y + 1)
-        {
-          return Direction.South;
-        }
-        else if (to.X == from.X - 1 && to.Y == from.Y)
-        {
-          return Direction.West;
-        }
-        else if (to.X == from.X && to.Y == from.Y - 1)
-        {
-          return Direction.North;
-        }
+      if (to.X == from.X + 1 && to.Y == from.Y)
+      {
+        return Direction.East;
+      }
+      else if (to.X == from.X && to.Y == from.Y + 1)
+      {
+        return Direction.South;
+      }
+      else if (to.X == from.X - 1 && to.Y == from.Y)
+      {
+        return Direction.West;
+      }
+      else if (to.X == from.X && to.Y == from.Y - 1)
+      {
+        return Direction.North;
+      }
       return Direction.Undefined;
     }
   }

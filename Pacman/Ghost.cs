@@ -26,10 +26,11 @@ namespace Pacman
     //Vitesse du fantôme (nombre de cases)
     public int speed = 1;
     //x Initial du fantôme
-    int initX = 0;
+    private int initX = 0;
     //y initial du fantôme
-    int initY = 0;
-
+    private int initY = 0;
+    //Élément en dessous du fantôme
+    PacmanElement elementUnderGhost = PacmanElement.Undefined;
 
     /// <summary>
     /// Constructeur de ghost; initialise les composantes selon des valeurs données.
@@ -44,6 +45,7 @@ namespace Pacman
       nbUpdates = 0;
       initX = gridX;
       initY = gridY;
+      elementUnderGhost = PacmanElement.Undefined;
     }
 
     /// <summary>
@@ -53,6 +55,7 @@ namespace Pacman
     {
       cowardState = false;
       nbUpdates = 0;
+      elementUnderGhost = PacmanElement.Undefined;
     }
     /// <summary>
     /// Obtient la position en X du fantôme
@@ -93,7 +96,8 @@ namespace Pacman
     /// <param name="aMaze">Grille du jeu</param>
     public void Move(Direction direction, PacmanGrid aMaze)
     {
-      aMaze.SetMazeElementAt(xPosition, yPosition, PacmanElement.None);
+      aMaze.SetMazeElementAt(xPosition, yPosition, elementUnderGhost);
+
       if (direction == Direction.East)
       {
         xPosition++;
@@ -110,7 +114,7 @@ namespace Pacman
       {
         yPosition++;
       }
-
+      elementUnderGhost = aMaze.GetMazeElementAt(xPosition, yPosition);
       aMaze.SetMazeElementAt(xPosition,yPosition, PacmanElement.Ghost);
     }
     /// <summary>
