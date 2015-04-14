@@ -71,27 +71,30 @@ namespace PathFinder
       {
         return Direction.None;
       }
-      else if(costs[to.X, to.Y] != 1)
+      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1))
       {
-        if (costs[to.X, to.Y] < costs[to.X + 1, to.Y])
+        if (costs[to.X, to.Y] != 1)
         {
-          to.X = to.X + 1;
-          return RecurseFindDirection(costs, from, to);
-        }
-        else if (costs[to.X, to.Y] < costs[to.X, to.Y + 1])
-        {
-          to.Y = to.Y + 1;
-          return RecurseFindDirection(costs, from, to);
-        }
-        else if (costs[to.X, to.Y] < costs[to.X - 1, to.Y])
-        {
-          to.X = to.X - 1;
-          return RecurseFindDirection(costs, from, to);
-        }
-        else if (costs[to.X, to.Y] < costs[to.X, to.Y-1])
-        {
-          to.Y = to.Y - 1;
-          return RecurseFindDirection(costs, from, to);
+          if (costs[to.X, to.Y] < costs[to.X + 1, to.Y])
+          {
+            to.X = to.X + 1;
+            return RecurseFindDirection(costs, from, to);
+          }
+          else if (costs[to.X, to.Y] < costs[to.X, to.Y + 1])
+          {
+            to.Y = to.Y + 1;
+            return RecurseFindDirection(costs, from, to);
+          }
+          else if (costs[to.X, to.Y] < costs[to.X - 1, to.Y])
+          {
+            to.X = to.X - 1;
+            return RecurseFindDirection(costs, from, to);
+          }
+          else if (costs[to.X, to.Y] < costs[to.X, to.Y - 1])
+          {
+            to.Y = to.Y - 1;
+            return RecurseFindDirection(costs, from, to);
+          }
         }
       }
       else
