@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.IO;
-using System.Diagnostics;
-using Pacman;
-using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Pacman
 {
@@ -31,20 +28,29 @@ namespace Pacman
       EndGameResult result = aGame.Update();
       if (result == EndGameResult.Win)
       {
+        EndGameForm endGameForm = new EndGameForm();
+        endGameForm.SetEndGameResult(result);
+        mainTimer.Stop();
         currentLevel++;
         if (currentLevel < levelsPath.Length)
         {
           aGame.LoadGrid(levelsPath[currentLevel]);
           this.ClientSize = new Size(aGame.GetSize().Width, aGame.GetSize().Height);
+          endGameForm.SetIsLastLevel(false);
+          endGameForm.ShowDialog();
+          mainTimer.Start();
         }
         else
         {
-          Application.Exit();
+          endGameForm.Show();
         }
       }
       else if (result == EndGameResult.Loose)
       {
-        Application.Exit();
+        EndGameForm endGameForm = new EndGameForm();
+        endGameForm.SetEndGameResult(result);
+        endGameForm.Show();
+        mainTimer.Stop();
       }
       //</Charles Lachance>
     }
