@@ -19,3 +19,4 @@ D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Debug\Pacman.pdb
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.Form1.resources
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.Properties.Resources.resources
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.csproj.GenerateResource.Cache
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.EndGameForm.resources

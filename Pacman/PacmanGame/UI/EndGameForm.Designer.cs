@@ -35,17 +35,18 @@
       // 
       // lblVictoryOrLoose
       // 
-      this.lblVictoryOrLoose.AutoSize = true;
+      this.lblVictoryOrLoose.Dock = System.Windows.Forms.DockStyle.Fill;
       this.lblVictoryOrLoose.Font = new System.Drawing.Font("Motorwerk", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblVictoryOrLoose.ForeColor = System.Drawing.Color.White;
-      this.lblVictoryOrLoose.Location = new System.Drawing.Point(12, 85);
+      this.lblVictoryOrLoose.Location = new System.Drawing.Point(0, 0);
       this.lblVictoryOrLoose.Name = "lblVictoryOrLoose";
-      this.lblVictoryOrLoose.Size = new System.Drawing.Size(0, 73);
+      this.lblVictoryOrLoose.Size = new System.Drawing.Size(624, 282);
       this.lblVictoryOrLoose.TabIndex = 0;
       this.lblVictoryOrLoose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
       // btnContinueQuit
       // 
+      this.btnContinueQuit.AutoSize = true;
       this.btnContinueQuit.Location = new System.Drawing.Point(268, 225);
       this.btnContinueQuit.Name = "btnContinueQuit";
       this.btnContinueQuit.Size = new System.Drawing.Size(75, 23);
