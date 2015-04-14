@@ -16,7 +16,6 @@ namespace PathFinder
             costs[i,j] = int.MaxValue;
           }
         }
-
         costs[from.X, from.Y] = 0;
         BuildPaths(maze, from, costs);
         return RecurseFindDirection(costs, from, to);
@@ -64,7 +63,7 @@ namespace PathFinder
     /// </summary>
     /// <param name="costs">Tableau de distances</param>
     /// <param name="from">Position du fantôme</param>
-    /// <param name="to">Position du pacman</param>
+    /// <param name="to">Position de la destination</param>
     /// <returns></returns>
     private static Direction RecurseFindDirection(int[,] costs, Point from, Point to)
     {
@@ -109,7 +108,7 @@ namespace PathFinder
         {
           return Direction.West;
         }
-        else 
+        else if(to.X == from.X && to.Y == from.Y-1)
         {
           return Direction.North;
         }

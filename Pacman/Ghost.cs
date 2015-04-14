@@ -1,5 +1,10 @@
 ﻿using System.Drawing;
 using PathFinder;
+using System;
+using System.IO;
+using System.Windows.Forms;
+using System.Windows.Input;
+using Pacman.Properties;
 
 namespace Pacman
 {
@@ -17,9 +22,14 @@ namespace Pacman
     //Nombre de mise à jours
     private int nbUpdates = 0;
     //Nombre de mise à jours effectués avant un déplacement
-    private int nbUpdatesBeforeMove = 5;
+    private int nbUpdatesBeforeMove = 20;
     //Vitesse du fantôme (nombre de cases)
     public int speed = 1;
+    //x Initial du fantôme
+    int initX = 0;
+    //y initial du fantôme
+    int initY = 0;
+
 
     /// <summary>
     /// Constructeur de ghost; initialise les composantes selon des valeurs données.
@@ -32,6 +42,8 @@ namespace Pacman
       yPosition = gridY;
       cowardState = false;
       nbUpdates = 0;
+      initX = gridX;
+      initY = gridY;
     }
 
     /// <summary>
@@ -111,7 +123,7 @@ namespace Pacman
         Point pacPoint = new Point((int)pacman.GetX(), (int)pacman.GetY());
         if (cowardState == true)
         {
-          //à compléter
+          Move(PathFinder.PathFinder.FindShortestPath(aMaze,ghostPoint, new Point(initX,initY)),aMaze);
         }
         else
         {
@@ -126,6 +138,26 @@ namespace Pacman
     public static void GhostChangeState(bool coward)
     {
       cowardState = coward;
+    }
+    
+    public void Draw(Graphics g, int ELEMENT_WIDTH, int ELEMENT_HEIGHT)
+    {
+      if (GetState() == false)
+      {
+        g.DrawImage(Resources.Ghost,
+                              xPosition * ELEMENT_WIDTH,
+                              yPosition * ELEMENT_HEIGHT,
+                              ELEMENT_WIDTH,
+                              ELEMENT_HEIGHT);
+      }
+      else
+      {
+        g.DrawImage(Resources.GhostWeak,
+                              xPosition * ELEMENT_WIDTH,
+                              yPosition * ELEMENT_HEIGHT,
+                              ELEMENT_WIDTH,
+                              ELEMENT_HEIGHT);
+      }
     }
 
     public static bool GetState()

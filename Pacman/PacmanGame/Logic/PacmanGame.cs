@@ -39,6 +39,7 @@ namespace Pacman
       pacman = new Pacman();
       ghosts = new Ghost[NB_GHOSTS];
       grid = new PacmanGrid();
+      int ghostNumber = 0;
     }
 
     // Vous aurez probablement à modifier le type de retour ici pour pouvoir
@@ -129,28 +130,17 @@ namespace Pacman
                           ELEMENT_WIDTH,
                           ELEMENT_HEIGHT);
               break;
-            case PacmanElement.Ghost:
-              if (Ghost.GetState() == false)
-              {
-                g.DrawImage(Resources.Ghost,
-                                      i * ELEMENT_WIDTH,
-                                      j * ELEMENT_HEIGHT,
-                                      ELEMENT_WIDTH,
-                                      ELEMENT_HEIGHT);
-              }
-              else
-              {
-                g.DrawImage(Resources.GhostWeak,
-                                      i * ELEMENT_WIDTH,
-                                      j * ELEMENT_HEIGHT,
-                                      ELEMENT_WIDTH,
-                                      ELEMENT_HEIGHT);
-              }
-              break;
-              //</Tommy Bouffard>
           }
         }
       }
+      foreach (Ghost ghost in ghosts)
+      {
+        if (ghost != null)
+        {
+          ghost.Draw(g,ELEMENT_WIDTH,ELEMENT_HEIGHT);
+        }
+      }
+      //</Tommy Bouffard>
     }
 
     public void LoadGrid(string path)
@@ -158,6 +148,7 @@ namespace Pacman
       try
       {
         grid.InitFrom(File.ReadAllText(path));
+        int ghostNumber = 0;
         for (int i = 0; i < grid.GetWidth(); i++)
         {
           for (int j = 0; j < grid.GetHeight(); j++)
@@ -166,6 +157,11 @@ namespace Pacman
             {
               pacman.SetX(i * ELEMENT_WIDTH);
               pacman.SetY(j * ELEMENT_HEIGHT);
+            }
+            if (grid.GetMazeElementAt(i,j) == PacmanElement.Ghost)
+            {
+              ghosts[ghostNumber] = new Ghost(i, j);
+              ghostNumber++;
             }
           }
         }
