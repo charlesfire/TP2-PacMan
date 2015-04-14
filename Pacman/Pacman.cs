@@ -4,7 +4,6 @@ namespace Pacman
 {
   public class Pacman
   {
-    private float speed = 20f;
     private float x = 0.0f;
     private float y = 0.0f;
     private Direction direction = Direction.None;
@@ -47,7 +46,6 @@ namespace Pacman
 
     public Pacman()
     {
-      speed = 20;
       x = 0.0f;
       y = 0.0f;
       direction = Direction.East;
