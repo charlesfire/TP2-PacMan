@@ -15,14 +15,14 @@ namespace Pacman
     private int xPosition = 0;
     //Position en Y du fantôme
     private int yPosition = 0;
-    //État du fantôme (true si le pacman a une super pastille, faux si il n'en a pas.
+    //État du fantôme (true si le pacman a une super pastille, faux si il n'en a pas).
     private static bool cowardState = false;
     //Nombre de fantômes
     private const int instancecount = 4;
     //Nombre de mise à jours
     private int nbUpdates = 0;
     //Nombre de mise à jours effectués avant un déplacement
-    private int nbUpdatesBeforeMove = 200;
+    private int nbUpdatesBeforeMove = 5;
     //Vitesse du fantôme (nombre de cases)
     public int speed = 1;
     //x Initial du fantôme
@@ -93,6 +93,7 @@ namespace Pacman
     /// <param name="aMaze">Grille du jeu</param>
     public void Move(Direction direction, PacmanGrid aMaze)
     {
+      aMaze.SetMazeElementAt(xPosition, yPosition, PacmanElement.None);
       if (direction == Direction.East)
       {
         xPosition++;
@@ -109,6 +110,8 @@ namespace Pacman
       {
         yPosition++;
       }
+
+      aMaze.SetMazeElementAt(xPosition,yPosition, PacmanElement.Ghost);
     }
     /// <summary>
     /// Met à jour le fantôme selon la position du pacman
@@ -117,6 +120,7 @@ namespace Pacman
     /// <param name="pacman">Instance du pacman</param>
     public void Update(PacmanGrid aMaze,Pacman pacman)
     {
+      nbUpdates++;
       if (nbUpdates % nbUpdatesBeforeMove == 0)
       {
         Point ghostPoint = new Point(xPosition, yPosition);

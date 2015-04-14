@@ -73,53 +73,51 @@ namespace PathFinder
       {
         return Direction.None;
       }
-      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1) && to.X<0 && to.Y<0)
+      else if (to.X < costs.GetLength(0) && to.Y < costs.GetLength(1) && to.X > 0 && to.Y > 0)
       {
         if (costs[to.X, to.Y] != 1)
         {
-          if (costs[to.X, to.Y] < costs[to.X + 1, to.Y])
+          if (costs[to.X, to.Y] > costs[to.X + 1, to.Y])
           {
             to.X = to.X + 1;
             return RecurseFindDirection(costs, from, to);
           }
-          else if (costs[to.X, to.Y] < costs[to.X, to.Y + 1])
+          else if (costs[to.X, to.Y] > costs[to.X, to.Y + 1])
           {
             to.Y = to.Y + 1;
             return RecurseFindDirection(costs, from, to);
           }
-          else if (costs[to.X, to.Y] < costs[to.X - 1, to.Y])
+          else if (costs[to.X, to.Y] > costs[to.X - 1, to.Y])
           {
             to.X = to.X - 1;
             return RecurseFindDirection(costs, from, to);
           }
-          else if (costs[to.X, to.Y] < costs[to.X, to.Y - 1])
+          else if (costs[to.X, to.Y] > costs[to.X, to.Y - 1])
           {
             to.Y = to.Y - 1;
             return RecurseFindDirection(costs, from, to);
           }
         }
       }
-      else
-      {
-        if (to.X == from.X+1 && to.Y == from.Y)
+        if (to.X == from.X + 1 && to.Y == from.Y)
         {
           return Direction.East;
         }
-        else if (to.X == from.X && to.Y == from.Y+1)
+        else if (to.X == from.X && to.Y == from.Y + 1)
         {
           return Direction.South;
         }
-        else if (to.X == from.X-1 && to.Y == from.Y)
+        else if (to.X == from.X - 1 && to.Y == from.Y)
         {
           return Direction.West;
         }
-        else if(to.X == from.X && to.Y == from.Y-1)
+        else if (to.X == from.X && to.Y == from.Y - 1)
         {
           return Direction.North;
         }
-      }
       return Direction.Undefined;
     }
-    //</Tommy Bouffard>
   }
+    //</Tommy Bouffard>
 }
+
