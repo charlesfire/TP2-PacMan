@@ -82,7 +82,7 @@ namespace PathFinder
         //Condition de fin: le fantôme est adjacent au pacman
         if (costs[to.X, to.Y] != 1)
         {
-          //(Pour les 4 cas) Si la distance est plus petite lorsq'on change de case, on rappèle la fonction en cette case.
+          //(Pour les 4 cas) Si la distance est plus petite lorsqu'on change de case, on rappèle la fonction en cette case.
           if (costs[to.X, to.Y] > costs[to.X + 1, to.Y])
           {
             to.X = to.X + 1;
