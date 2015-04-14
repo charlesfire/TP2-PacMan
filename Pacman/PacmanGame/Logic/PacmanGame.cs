@@ -39,7 +39,6 @@ namespace Pacman
       pacman = new Pacman();
       ghosts = new Ghost[NB_GHOSTS];
       grid = new PacmanGrid();
-      int ghostNumber = 0;
     }
 
     // Vous aurez probablement à modifier le type de retour ici pour pouvoir
@@ -148,7 +147,6 @@ namespace Pacman
       try
       {
         grid.InitFrom(File.ReadAllText(path));
-        int ghostNumber = 0;
         for (int i = 0; i < grid.GetWidth(); i++)
         {
           for (int j = 0; j < grid.GetHeight(); j++)
@@ -157,11 +155,6 @@ namespace Pacman
             {
               pacman.SetX(i * ELEMENT_WIDTH);
               pacman.SetY(j * ELEMENT_HEIGHT);
-            }
-            if (grid.GetMazeElementAt(i,j) == PacmanElement.Ghost)
-            {
-              ghosts[ghostNumber] = new Ghost(i, j);
-              ghostNumber++;
             }
           }
         }
@@ -172,6 +165,29 @@ namespace Pacman
         MessageBox.Show(ex.Message, "Erreur de chargement", MessageBoxButtons.OK, MessageBoxIcon.Error);
         //</Tommy Bouffard>
         Application.Exit();
+      }
+    }
+    /// <summary>
+    /// Crée les instances du fantômes dans la partie.
+    /// </summary>
+    public void SpawnGhosts()
+    {
+      int ghostNumber = 0;
+      for (int i = 0; i < grid.GetWidth(); i++)
+      {
+        for (int j = 0; j < grid.GetHeight(); j++)
+       {
+          if (grid.GetMazeElementAt(i, j) == PacmanElement.Pacman)
+          {
+            pacman.SetX(i * ELEMENT_WIDTH);
+            pacman.SetY(j * ELEMENT_HEIGHT);
+          }
+          if (grid.GetMazeElementAt(i,j) == PacmanElement.Ghost)
+          {
+            ghosts[ghostNumber] = new Ghost(i, j);
+            ghostNumber++;
+          }
+        }
       }
     }
 

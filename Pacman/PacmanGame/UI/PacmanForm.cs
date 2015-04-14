@@ -48,5 +48,11 @@ namespace Pacman
       CowardTimer.Enabled = false;
       Ghost.GhostChangeState(false);
     }
+
+    private void TimerSpawn(object sender, EventArgs e)
+    {
+      aGame.SpawnGhosts();
+      timerGhostSpawner.Enabled = false;
+    }
   }
 }
