@@ -1,10 +1,6 @@
 ﻿using System.Drawing;
-using PathFinder;
-using System;
-using System.IO;
-using System.Windows.Forms;
-using System.Windows.Input;
 using Pacman.Properties;
+using PathFinder;
 
 namespace Pacman
 {

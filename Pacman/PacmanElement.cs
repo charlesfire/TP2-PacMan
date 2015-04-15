@@ -1,4 +1,8 @@
 ﻿//<Charles Lachance>
+/*
+ * Énumération représentant un élément du jeu
+ * Créer par Charles Lachance
+ */
 namespace PathFinder
 {
   public enum PacmanElement

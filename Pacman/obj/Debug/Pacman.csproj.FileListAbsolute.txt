@@ -13,7 +13,6 @@ d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\obj\Debug\Pacman.
 d:\WORK HERE NOT IN GITHUB\TP2-PacManchanges\TP2-PacMan\Pacman\obj\Debug\Pacman.pdb
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.exe
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.pdb
-D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Debug\Pacman.exe
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Debug\Pacman.pdb
 D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Debug\Pacman.Form1.resources

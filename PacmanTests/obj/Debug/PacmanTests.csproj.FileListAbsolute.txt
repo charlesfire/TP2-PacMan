@@ -5,3 +5,10 @@ d:\WORK HERE NOT IN GITHUB\TP2-PacMan\PacmanTests\bin\Debug\Pacman.pdb
 d:\WORK HERE NOT IN GITHUB\TP2-PacMan\PacmanTests\obj\Debug\PacmanTests.csprojResolveAssemblyReference.cache
 d:\WORK HERE NOT IN GITHUB\TP2-PacMan\PacmanTests\obj\Debug\MazeSolverTests.dll
 d:\WORK HERE NOT IN GITHUB\TP2-PacMan\PacmanTests\obj\Debug\MazeSolverTests.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\bin\Debug\MazeSolverTests.dll
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\bin\Debug\MazeSolverTests.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\bin\Debug\Pacman.exe
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\bin\Debug\Pacman.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\obj\Debug\PacmanTests.csprojResolveAssemblyReference.cache
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\obj\Debug\MazeSolverTests.dll
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\PacmanTests\obj\Debug\MazeSolverTests.pdb

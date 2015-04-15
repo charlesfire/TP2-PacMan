@@ -1,0 +1,10 @@
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Release\Pacman.exe.config
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Release\Pacman.exe
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\bin\Release\Pacman.pdb
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.csprojResolveAssemblyReference.cache
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.EndGameForm.resources
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.Form1.resources
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.Properties.Resources.resources
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.csproj.GenerateResource.Cache
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.exe
+D:\Documents\École\Jeux Vidéos\TP2\TP2Etu\Pacman\obj\Release\Pacman.pdb
