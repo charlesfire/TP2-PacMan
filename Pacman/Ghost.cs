@@ -2,6 +2,10 @@
 using Pacman.Properties;
 using PathFinder;
 
+/*
+ *Cette classe contient l'ensemble des propriétés et des fonctions attachés aux fantômes dans le jeu.
+ * 
+ */
 namespace Pacman
 {
   //<Tommy Bouffard>

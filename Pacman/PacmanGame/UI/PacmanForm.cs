@@ -148,18 +148,30 @@ namespace Pacman
       //</Charles Lachance>
     }
 
-    //<Tommy Bouffard>
+    //<Tommy Bouffard-Hébert>
+    /// <summary>
+    /// Événnement tick du timer de fantôme peureux: désactive le mode peureux.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void TimerEnd(object sender, EventArgs e)
     {
       CowardTimer.Enabled = false;
       Ghost.GhostChangeState(false);
     }
-
+    /// <summary>
+    /// Timer du spawn de fantôme.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void TimerSpawn(object sender, EventArgs e)
     {
       aGame.SpawnGhosts();
     }
-
+    /// <summary>
+    /// Vérifie si le pacman a pris une super pastille.
+    /// </summary>
+    /// <param name="pacman">le pacman du jeu</param>
     private void CheckIfSuperPill(Pacman pacman)
     {
       if (pacman.GetHasSuperPill() == true)
@@ -174,6 +186,6 @@ namespace Pacman
         Ghost.GhostChangeState(true);
       }
     }
-    //</Tommy Bouffard>
+    //</Tommy Bouffard-Hébert>
   }
 }
